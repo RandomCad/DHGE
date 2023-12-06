@@ -1,0 +1,65 @@
+main.cpp: In function ‘int main(int, const char**)’:
+main.cpp:6:13: error: no matching function for call to ‘Node<int>::Node()’
+    6 |   Node<int> root;
+      |             ^~~~
+In file included from main.cpp:1:
+Node.h:7:5: note: candidate: ‘Node<N>::Node(N) [with N = int]’
+    7 |     Node(N a) : l(nullptr), r(nullptr), cont(a) { }
+      |     ^~~~
+Node.h:7:5: note:   candidate expects 1 argument, 0 provided
+Node.h:5:7: note: candidate: ‘constexpr Node<int>::Node(const Node<int>&)’
+    5 | class Node{
+      |       ^~~~
+Node.h:5:7: note:   candidate expects 1 argument, 0 provided
+main.cpp:5:14: warning: unused parameter ‘argc’ [-Wunused-parameter]
+    5 | int main(int argc, const char *argv[]){
+      |          ~~~~^~~~
+In file included from main.cpp:1:
+Node.h: In instantiation of ‘Node<N>& Node<N>::Add(const N&) [with N = int]’:
+main.cpp:8:13:   required from here
+Node.h:14:34: error: invalid user-defined conversion from ‘Node<int>*’ to ‘Node<int>&’ [-fpermissive]
+   14 |       if(this == nullptr) return new Node<N>(a);
+      |                                  ^~~~~~~~~~~~~~
+Node.h:7:5: note: candidate is: ‘Node<N>::Node(N) [with N = int]’ (near match)
+    7 |     Node(N a) : l(nullptr), r(nullptr), cont(a) { }
+      |     ^~~~
+Node.h:7:5: note:   conversion of argument 1 would be ill-formed:
+Node.h:14:34: error: invalid conversion from ‘Node<int>*’ to ‘int’ [-fpermissive]
+   14 |       if(this == nullptr) return new Node<N>(a);
+      |                                  ^~~~~~~~~~~~~~
+      |                                  |
+      |                                  Node<int>*
+Node.h:14:34: error: invalid conversion from ‘Node<int>*’ to ‘int’ [-fpermissive]
+   14 |       if(this == nullptr) return new Node<N>(a);
+      |                                  ^~~~~~~~~~~~~~
+      |                                  |
+      |                                  Node<int>*
+Node.h:7:12: note:   initializing argument 1 of ‘Node<N>::Node(N) [with N = int]’
+    7 |     Node(N a) : l(nullptr), r(nullptr), cont(a) { }
+      |          ~~^
+Node.h:14:47: error: conversion to non-const reference type ‘class Node<int>&’ from rvalue of type ‘Node<int>’ [-fpermissive]
+   14 |       if(this == nullptr) return new Node<N>(a);
+      |                                               ^
+Node.h:25:35: error: invalid user-defined conversion from ‘Node<int>*’ to ‘Node<int>&’ [-fpermissive]
+   25 |         if(r == nullptr) return r = new Node<N>(a);
+      |                                 ~~^~~~~~~~~~~~~~~~
+Node.h:7:5: note: candidate is: ‘Node<N>::Node(N) [with N = int]’ (near match)
+    7 |     Node(N a) : l(nullptr), r(nullptr), cont(a) { }
+      |     ^~~~
+Node.h:7:5: note:   conversion of argument 1 would be ill-formed:
+Node.h:25:35: error: invalid conversion from ‘Node<int>*’ to ‘int’ [-fpermissive]
+   25 |         if(r == nullptr) return r = new Node<N>(a);
+      |                                 ~~^~~~~~~~~~~~~~~~
+      |                                   |
+      |                                   Node<int>*
+Node.h:25:35: error: invalid conversion from ‘Node<int>*’ to ‘int’ [-fpermissive]
+   25 |         if(r == nullptr) return r = new Node<N>(a);
+      |                                 ~~^~~~~~~~~~~~~~~~
+      |                                   |
+      |                                   Node<int>*
+Node.h:7:12: note:   initializing argument 1 of ‘Node<N>::Node(N) [with N = int]’
+    7 |     Node(N a) : l(nullptr), r(nullptr), cont(a) { }
+      |          ~~^
+Node.h:25:50: error: conversion to non-const reference type ‘class Node<int>&’ from rvalue of type ‘Node<int>’ [-fpermissive]
+   25 |         if(r == nullptr) return r = new Node<N>(a);
+      |                                                  ^

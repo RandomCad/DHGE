@@ -1,0 +1,23 @@
+In file included from main.cpp:9:
+object.h:65:17: note: ‘#pragma message: KUSCHE is not defined therfor obj moust be initialisiert and fielled at a nother point’
+   65 | #pragma message "KUSCHE is not defined therfor obj moust be initialisiert and fielled at a nother point"
+      |                 ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+In file included from Test.cpp:4:
+object.h:65:17: note: ‘#pragma message: KUSCHE is not defined therfor obj moust be initialisiert and fielled at a nother point’
+   65 | #pragma message "KUSCHE is not defined therfor obj moust be initialisiert and fielled at a nother point"
+      |                 ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Test.cpp: In function ‘int main(int, const char**)’:
+Test.cpp:30:19: note: ‘#pragma message: DEBUG’
+   30 |   #pragma message "DEBUG"
+      |                   ^~~~~~~
+Test.cpp:36:21: note: ‘#pragma message: LINEAR_STAT is compiling’
+   36 |     #pragma message "LINEAR_STAT is compiling"
+      |                     ^~~~~~~~~~~~~~~~~~~~~~~~~~
+Test.cpp: At global scope:
+Test.cpp:104:19: note: ‘#pragma message: Objectes are Created withe Linear Randomnes.’
+  104 |   #pragma message "Objectes are Created withe Linear Randomnes."
+      |                   ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+In file included from KuscheSolve.cpp:2:
+object.h:65:17: note: ‘#pragma message: KUSCHE is not defined therfor obj moust be initialisiert and fielled at a nother point’
+   65 | #pragma message "KUSCHE is not defined therfor obj moust be initialisiert and fielled at a nother point"
+      |                 ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~

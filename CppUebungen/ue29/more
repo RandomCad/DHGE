@@ -1,0 +1,7 @@
+/usr/bin/ld: /tmp/cctIKpQX.o: warning: relocation against `_ZN6GraObj4listB5cxx11E' in read-only section `.text._ZN6GraObjC2ERKS_[_ZN6GraObjC5ERKS_]'
+/usr/bin/ld: /tmp/ccbdmety.o: in function `GraObj::GraObj(Color const&, int, int, int, int, int, int)':
+/home/mathieu/CppUebungen/ue29/graobj.h:20: undefined reference to `GraObj::list[abi:cxx11]'
+/usr/bin/ld: /tmp/cctIKpQX.o: in function `GraObj::GraObj(GraObj const&)':
+/home/mathieu/CppUebungen/ue29/graobj.h:24: undefined reference to `GraObj::list[abi:cxx11]'
+/usr/bin/ld: warning: creating DT_TEXTREL in a PIE
+collect2: error: ld returned 1 exit status

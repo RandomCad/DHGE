@@ -1,0 +1,44 @@
+main.cpp: In function ‘int main(int, const char**)’:
+main.cpp:9:25: error: no matching function for call to ‘std::basic_ifstream<char>::basic_ifstream(FILE*&)’
+    9 |   std::ifstream in(stdin);
+      |                         ^
+In file included from main.cpp:2:
+/usr/include/c++/11/fstream:584:9: note: candidate: ‘template<class _Path, class _Require> std::basic_ifstream<_CharT, _Traits>::basic_ifstream(const _Path&, std::ios_base::openmode) [with _Path = _Path; _Require = _Require; _CharT = char; _Traits = std::char_traits<char>]’
+  584 |         basic_ifstream(const _Path& __s,
+      |         ^~~~~~~~~~~~~~
+/usr/include/c++/11/fstream:584:9: note:   template argument deduction/substitution failed:
+/usr/include/c++/11/fstream:583:32: error: request for member ‘make_preferred’ in ‘std::declval<_IO_FILE*&>()’, which is of pointer type ‘_IO_FILE*’ (maybe you meant to use ‘->’ ?)
+  583 |       template<typename _Path, typename _Require = _If_fs_path<_Path>>
+      |                                ^~~~~~~~
+/usr/include/c++/11/fstream:592:7: note: candidate: ‘std::basic_ifstream<_CharT, _Traits>::basic_ifstream(std::basic_ifstream<_CharT, _Traits>&&) [with _CharT = char; _Traits = std::char_traits<char>]’
+  592 |       basic_ifstream(basic_ifstream&& __rhs)
+      |       ^~~~~~~~~~~~~~
+/usr/include/c++/11/fstream:592:39: note:   no known conversion for argument 1 from ‘FILE*’ to ‘std::basic_ifstream<char>&&’
+  592 |       basic_ifstream(basic_ifstream&& __rhs)
+      |                      ~~~~~~~~~~~~~~~~~^~~~~
+/usr/include/c++/11/fstream:567:7: note: candidate: ‘std::basic_ifstream<_CharT, _Traits>::basic_ifstream(const string&, std::ios_base::openmode) [with _CharT = char; _Traits = std::char_traits<char>; std::string = std::__cxx11::basic_string<char>; std::ios_base::openmode = std::ios_base::openmode]’
+  567 |       basic_ifstream(const std::string& __s,
+      |       ^~~~~~~~~~~~~~
+/usr/include/c++/11/fstream:567:41: note:   no known conversion for argument 1 from ‘FILE*’ to ‘const string&’ {aka ‘const std::__cxx11::basic_string<char>&’}
+  567 |       basic_ifstream(const std::string& __s,
+      |                      ~~~~~~~~~~~~~~~~~~~^~~
+/usr/include/c++/11/fstream:534:7: note: candidate: ‘std::basic_ifstream<_CharT, _Traits>::basic_ifstream(const char*, std::ios_base::openmode) [with _CharT = char; _Traits = std::char_traits<char>; std::ios_base::openmode = std::ios_base::openmode]’
+  534 |       basic_ifstream(const char* __s, ios_base::openmode __mode = ios_base::in)
+      |       ^~~~~~~~~~~~~~
+/usr/include/c++/11/fstream:534:34: note:   no known conversion for argument 1 from ‘FILE*’ to ‘const char*’
+  534 |       basic_ifstream(const char* __s, ios_base::openmode __mode = ios_base::in)
+      |                      ~~~~~~~~~~~~^~~
+/usr/include/c++/11/fstream:523:7: note: candidate: ‘std::basic_ifstream<_CharT, _Traits>::basic_ifstream() [with _CharT = char; _Traits = std::char_traits<char>]’
+  523 |       basic_ifstream() : __istream_type(), _M_filebuf()
+      |       ^~~~~~~~~~~~~~
+/usr/include/c++/11/fstream:523:7: note:   candidate expects 0 arguments, 1 provided
+main.cpp:10:17: error: no match for call to ‘(std::ifstream {aka std::basic_ifstream<char>}) (const char*&)’
+   10 |   if(argc>=2) in(argv[1]);
+      |               ~~^~~~~~~~~
+main.cpp:17:16: error: invalid use of member function ‘void std::__cxx11::basic_stringstream<_CharT, _Traits, _Alloc>::str(const __string_type&) [with _CharT = char; _Traits = std::char_traits<char>; _Alloc = std::allocator<char>; std::__cxx11::basic_stringstream<_CharT, _Traits, _Alloc>::__string_type = std::__cxx11::basic_string<char>]’ (did you forget the ‘()’ ?)
+   17 |     switch (st.str.back()){
+      |             ~~~^~~
+main.cpp:17:20: error: expected ‘)’ before ‘back’
+   17 |     switch (st.str.back()){
+      |            ~       ^~~~
+      |                    )

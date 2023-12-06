@@ -1,0 +1,16 @@
+main.cpp: In function ‘int main(int, const char**)’:
+main.cpp:34:14: warning: declaration of ‘i’ shadows a previous local [-Wshadow]
+   34 |     for(auto i : strVec) std::cout << i << std::endl;
+      |              ^
+main.cpp:18:20: note: shadowed declaration is here
+   18 |   for(const char **i=argv + 1;*i;i++){
+      |                    ^
+main.cpp:36:14: warning: declaration of ‘i’ shadows a previous local [-Wshadow]
+   36 |     for(auto i : l) std::cout << i << std::endl;
+      |              ^
+main.cpp:18:20: note: shadowed declaration is here
+   18 |   for(const char **i=argv + 1;*i;i++){
+      |                    ^
+main.cpp:14:14: warning: unused parameter ‘argc’ [-Wunused-parameter]
+   14 | int main(int argc, const char *argv[]){
+      |          ~~~~^~~~

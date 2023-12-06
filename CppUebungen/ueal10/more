@@ -1,0 +1,19 @@
+main.cpp: In function ‘int main(int, const char**)’:
+main.cpp:32:26: error: cannot bind non-const lvalue reference of type ‘const char*&’ to an rvalue of type ‘const char*’
+   32 |         tabel.add(i.c_str(),a);
+      |                   ~~~~~~~^~
+In file included from main.cpp:1:
+HashTabel.h:33:17: note:   initializing argument 1 of ‘void HashTabel<N, K, hashMeth, StartSize>::add(K&, N&) [with N = word; K = const char*; unsigned int (* hashMeth)(unsigned int, K&) = charHash; int StartSize = 100001]’
+   33 |     void add(K &key,N &val){
+      |              ~~~^~~
+HashTabel.h: In instantiation of ‘std::ostream& operator<<(std::ostream&, const HashTabel<N, K, hashMeth, StartSize>&) [with N = word; K = const char*; unsigned int (* hashMeth)(unsigned int, K&) = charHash; int StartSize = 100001; std::ostream = std::basic_ostream<char>]’:
+main.cpp:33:22:   required from here
+HashTabel.h:50:31: error: request for member ‘next’ in ‘* * j’, which is of pointer type ‘HashTabel<word, const char*, charHash>::HashEl*’ (maybe you meant to use ‘->’ ?)
+   50 |     for(auto j=&i;*j;*j=(*j)->next){
+      |                         ~~~~~~^~~~
+HashTabel.h:51:30: error: request for member ‘Hash’ in ‘* * j’, which is of pointer type ‘HashTabel<word, const char*, charHash>::HashEl*’ (maybe you meant to use ‘->’ ?)
+   51 |       a << "hash: " << (*j)->Hash << " Element: " << (*j)->ELem << std::endl;
+      |                        ~~~~~~^~~~
+HashTabel.h:51:60: error: request for member ‘ELem’ in ‘* * j’, which is of pointer type ‘HashTabel<word, const char*, charHash>::HashEl*’ (maybe you meant to use ‘->’ ?)
+   51 |       a << "hash: " << (*j)->Hash << " Element: " << (*j)->ELem << std::endl;
+      |                                                      ~~~~~~^~~~

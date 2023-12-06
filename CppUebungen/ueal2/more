@@ -1,0 +1,19 @@
+main.cpp: In function ‘int main(int, const char**)’:
+main.cpp:5:14: warning: unused parameter ‘argc’ [-Wunused-parameter]
+    5 | int main(int argc, const char *argv[]){
+      |          ~~~~^~~~
+In file included from /usr/include/c++/11/cstddef:50,
+                 from Stack.h:4,
+                 from main.cpp:1:
+Stack.h: In instantiation of ‘N& Stack<N>::Pop() [with N = const char*]’:
+main.cpp:8:26:   required from here
+Stack.h:28:25: error: cannot bind non-const lvalue reference of type ‘const char*&’ to a value of type ‘long int’
+   28 |       if(!start) return NULL;
+      |                         ^~~~
+In file included from main.cpp:1:
+Stack.h:33:14: warning: reference to local variable ‘ret’ returned [-Wreturn-local-addr]
+   33 |       return ret;
+      |              ^~~
+Stack.h:29:9: note: declared here
+   29 |       N ret=start->Data;
+      |         ^~~

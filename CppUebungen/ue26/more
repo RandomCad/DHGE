@@ -1,0 +1,190 @@
+In file included from main.cpp:2:
+Paar.h: In instantiation of ‘bool Paar<K, N>::operator<(Paar<K, N>&) const [with K = std::__cxx11::basic_string<char>; N = int]’:
+Arr.h:22:48:   required from ‘K* Arr<K>::Smalest() const [with K = Paar<std::__cxx11::basic_string<char>, int>]’
+main.cpp:10:45:   required from here
+Paar.h:16:45: error: no match for ‘operator<’ (operand types are ‘Paar<std::__cxx11::basic_string<char>, int>’ and ‘const Paar<std::__cxx11::basic_string<char>, int>’)
+   16 |     bool operator<(Paar &a) const { return a<*this; }
+      |                                            ~^~~~~~
+Paar.h:16:10: note: candidate: ‘bool Paar<K, N>::operator<(Paar<K, N>&) const [with K = std::__cxx11::basic_string<char>; N = int]’ (near match)
+   16 |     bool operator<(Paar &a) const { return a<*this; }
+      |          ^~~~~~~~
+Paar.h:16:10: note:   conversion of argument 1 would be ill-formed:
+Paar.h:16:45: error: binding reference of type ‘Paar<std::__cxx11::basic_string<char>, int>&’ to ‘const Paar<std::__cxx11::basic_string<char>, int>’ discards qualifiers
+   16 |     bool operator<(Paar &a) const { return a<*this; }
+      |                                            ~^~~~~~
+Paar.h:14:10: note: candidate: ‘bool Paar<K, N>::operator<(K&) const [with K = std::__cxx11::basic_string<char>; N = int]’
+   14 |     bool operator<(K &a) const { return a<this->Key; }
+      |          ^~~~~~~~
+Paar.h:14:23: note:   no known conversion for argument 1 from ‘const Paar<std::__cxx11::basic_string<char>, int>’ to ‘std::__cxx11::basic_string<char>&’
+   14 |     bool operator<(K &a) const { return a<this->Key; }
+      |                    ~~~^
+Paar.h:15:10: note: candidate: ‘bool Paar<K, N>::operator<(N&) const [with K = std::__cxx11::basic_string<char>; N = int]’
+   15 |     bool operator<(N &a) const { return a<this->Val; }
+      |          ^~~~~~~~
+Paar.h:15:23: note:   no known conversion for argument 1 from ‘const Paar<std::__cxx11::basic_string<char>, int>’ to ‘int&’
+   15 |     bool operator<(N &a) const { return a<this->Val; }
+      |                    ~~~^
+In file included from /usr/include/c++/11/bits/stl_algobase.h:67,
+                 from /usr/include/c++/11/bits/char_traits.h:39,
+                 from /usr/include/c++/11/string:40,
+                 from main.cpp:4:
+/usr/include/c++/11/bits/stl_iterator.h:1153:5: note: candidate: ‘template<class _IteratorL, class _IteratorR, class _Container> bool __gnu_cxx::operator<(const __gnu_cxx::__normal_iterator<_IteratorL, _Container>&, const __gnu_cxx::__normal_iterator<_IteratorR, _Container>&)’
+ 1153 |     operator<(const __normal_iterator<_IteratorL, _Container>& __lhs,
+      |     ^~~~~~~~
+/usr/include/c++/11/bits/stl_iterator.h:1153:5: note:   template argument deduction/substitution failed:
+In file included from main.cpp:2:
+Paar.h:16:45: note:   ‘Paar<std::__cxx11::basic_string<char>, int>’ is not derived from ‘const __gnu_cxx::__normal_iterator<_IteratorL, _Container>’
+   16 |     bool operator<(Paar &a) const { return a<*this; }
+      |                                            ~^~~~~~
+In file included from /usr/include/c++/11/bits/stl_algobase.h:67,
+                 from /usr/include/c++/11/bits/char_traits.h:39,
+                 from /usr/include/c++/11/string:40,
+                 from main.cpp:4:
+/usr/include/c++/11/bits/stl_iterator.h:1161:5: note: candidate: ‘template<class _Iterator, class _Container> bool __gnu_cxx::operator<(const __gnu_cxx::__normal_iterator<_Iterator, _Container>&, const __gnu_cxx::__normal_iterator<_Iterator, _Container>&)’
+ 1161 |     operator<(const __normal_iterator<_Iterator, _Container>& __lhs,
+      |     ^~~~~~~~
+/usr/include/c++/11/bits/stl_iterator.h:1161:5: note:   template argument deduction/substitution failed:
+In file included from main.cpp:2:
+Paar.h:16:45: note:   ‘Paar<std::__cxx11::basic_string<char>, int>’ is not derived from ‘const __gnu_cxx::__normal_iterator<_Iterator, _Container>’
+   16 |     bool operator<(Paar &a) const { return a<*this; }
+      |                                            ~^~~~~~
+In file included from /usr/include/c++/11/bits/stl_algobase.h:64,
+                 from /usr/include/c++/11/bits/char_traits.h:39,
+                 from /usr/include/c++/11/string:40,
+                 from main.cpp:4:
+/usr/include/c++/11/bits/stl_pair.h:489:5: note: candidate: ‘template<class _T1, class _T2> constexpr bool std::operator<(const std::pair<_T1, _T2>&, const std::pair<_T1, _T2>&)’
+  489 |     operator<(const pair<_T1, _T2>& __x, const pair<_T1, _T2>& __y)
+      |     ^~~~~~~~
+/usr/include/c++/11/bits/stl_pair.h:489:5: note:   template argument deduction/substitution failed:
+In file included from main.cpp:2:
+Paar.h:16:45: note:   ‘Paar<std::__cxx11::basic_string<char>, int>’ is not derived from ‘const std::pair<_T1, _T2>’
+   16 |     bool operator<(Paar &a) const { return a<*this; }
+      |                                            ~^~~~~~
+In file included from /usr/include/c++/11/bits/stl_algobase.h:67,
+                 from /usr/include/c++/11/bits/char_traits.h:39,
+                 from /usr/include/c++/11/string:40,
+                 from main.cpp:4:
+/usr/include/c++/11/bits/stl_iterator.h:425:5: note: candidate: ‘template<class _Iterator> constexpr bool std::operator<(const std::reverse_iterator<_Iterator>&, const std::reverse_iterator<_Iterator>&)’
+  425 |     operator<(const reverse_iterator<_Iterator>& __x,
+      |     ^~~~~~~~
+/usr/include/c++/11/bits/stl_iterator.h:425:5: note:   template argument deduction/substitution failed:
+In file included from main.cpp:2:
+Paar.h:16:45: note:   ‘Paar<std::__cxx11::basic_string<char>, int>’ is not derived from ‘const std::reverse_iterator<_Iterator>’
+   16 |     bool operator<(Paar &a) const { return a<*this; }
+      |                                            ~^~~~~~
+In file included from /usr/include/c++/11/bits/stl_algobase.h:67,
+                 from /usr/include/c++/11/bits/char_traits.h:39,
+                 from /usr/include/c++/11/string:40,
+                 from main.cpp:4:
+/usr/include/c++/11/bits/stl_iterator.h:464:5: note: candidate: ‘template<class _IteratorL, class _IteratorR> constexpr bool std::operator<(const std::reverse_iterator<_Iterator>&, const std::reverse_iterator<_IteratorR>&)’
+  464 |     operator<(const reverse_iterator<_IteratorL>& __x,
+      |     ^~~~~~~~
+/usr/include/c++/11/bits/stl_iterator.h:464:5: note:   template argument deduction/substitution failed:
+In file included from main.cpp:2:
+Paar.h:16:45: note:   ‘Paar<std::__cxx11::basic_string<char>, int>’ is not derived from ‘const std::reverse_iterator<_Iterator>’
+   16 |     bool operator<(Paar &a) const { return a<*this; }
+      |                                            ~^~~~~~
+In file included from /usr/include/c++/11/bits/stl_algobase.h:67,
+                 from /usr/include/c++/11/bits/char_traits.h:39,
+                 from /usr/include/c++/11/string:40,
+                 from main.cpp:4:
+/usr/include/c++/11/bits/stl_iterator.h:1557:5: note: candidate: ‘template<class _IteratorL, class _IteratorR> constexpr bool std::operator<(const std::move_iterator<_IteratorL>&, const std::move_iterator<_IteratorR>&)’
+ 1557 |     operator<(const move_iterator<_IteratorL>& __x,
+      |     ^~~~~~~~
+/usr/include/c++/11/bits/stl_iterator.h:1557:5: note:   template argument deduction/substitution failed:
+In file included from main.cpp:2:
+Paar.h:16:45: note:   ‘Paar<std::__cxx11::basic_string<char>, int>’ is not derived from ‘const std::move_iterator<_IteratorL>’
+   16 |     bool operator<(Paar &a) const { return a<*this; }
+      |                                            ~^~~~~~
+In file included from /usr/include/c++/11/bits/stl_algobase.h:67,
+                 from /usr/include/c++/11/bits/char_traits.h:39,
+                 from /usr/include/c++/11/string:40,
+                 from main.cpp:4:
+/usr/include/c++/11/bits/stl_iterator.h:1613:5: note: candidate: ‘template<class _Iterator> constexpr bool std::operator<(const std::move_iterator<_IteratorL>&, const std::move_iterator<_IteratorL>&)’
+ 1613 |     operator<(const move_iterator<_Iterator>& __x,
+      |     ^~~~~~~~
+/usr/include/c++/11/bits/stl_iterator.h:1613:5: note:   template argument deduction/substitution failed:
+In file included from main.cpp:2:
+Paar.h:16:45: note:   ‘Paar<std::__cxx11::basic_string<char>, int>’ is not derived from ‘const std::move_iterator<_IteratorL>’
+   16 |     bool operator<(Paar &a) const { return a<*this; }
+      |                                            ~^~~~~~
+In file included from /usr/include/c++/11/bits/basic_string.h:48,
+                 from /usr/include/c++/11/string:55,
+                 from main.cpp:4:
+/usr/include/c++/11/string_view:589:5: note: candidate: ‘template<class _CharT, class _Traits> constexpr bool std::operator<(std::basic_string_view<_CharT, _Traits>, std::basic_string_view<_CharT, _Traits>)’
+  589 |     operator< (basic_string_view<_CharT, _Traits> __x,
+      |     ^~~~~~~~
+/usr/include/c++/11/string_view:589:5: note:   template argument deduction/substitution failed:
+In file included from main.cpp:2:
+Paar.h:16:45: note:   ‘Paar<std::__cxx11::basic_string<char>, int>’ is not derived from ‘std::basic_string_view<_CharT, _Traits>’
+   16 |     bool operator<(Paar &a) const { return a<*this; }
+      |                                            ~^~~~~~
+In file included from /usr/include/c++/11/bits/basic_string.h:48,
+                 from /usr/include/c++/11/string:55,
+                 from main.cpp:4:
+/usr/include/c++/11/string_view:595:5: note: candidate: ‘template<class _CharT, class _Traits> constexpr bool std::operator<(std::basic_string_view<_CharT, _Traits>, std::__type_identity_t<std::basic_string_view<_CharT, _Traits> >)’
+  595 |     operator< (basic_string_view<_CharT, _Traits> __x,
+      |     ^~~~~~~~
+/usr/include/c++/11/string_view:595:5: note:   template argument deduction/substitution failed:
+In file included from main.cpp:2:
+Paar.h:16:45: note:   ‘Paar<std::__cxx11::basic_string<char>, int>’ is not derived from ‘std::basic_string_view<_CharT, _Traits>’
+   16 |     bool operator<(Paar &a) const { return a<*this; }
+      |                                            ~^~~~~~
+In file included from /usr/include/c++/11/bits/basic_string.h:48,
+                 from /usr/include/c++/11/string:55,
+                 from main.cpp:4:
+/usr/include/c++/11/string_view:602:5: note: candidate: ‘template<class _CharT, class _Traits> constexpr bool std::operator<(std::__type_identity_t<std::basic_string_view<_CharT, _Traits> >, std::basic_string_view<_CharT, _Traits>)’
+  602 |     operator< (__type_identity_t<basic_string_view<_CharT, _Traits>> __x,
+      |     ^~~~~~~~
+/usr/include/c++/11/string_view:602:5: note:   template argument deduction/substitution failed:
+In file included from main.cpp:2:
+Paar.h:16:45: note:   ‘Paar<std::__cxx11::basic_string<char>, int>’ is not derived from ‘std::basic_string_view<_CharT, _Traits>’
+   16 |     bool operator<(Paar &a) const { return a<*this; }
+      |                                            ~^~~~~~
+In file included from /usr/include/c++/11/string:55,
+                 from main.cpp:4:
+/usr/include/c++/11/bits/basic_string.h:6340:5: note: candidate: ‘template<class _CharT, class _Traits, class _Alloc> bool std::operator<(const std::__cxx11::basic_string<_CharT, _Traits, _Allocator>&, const std::__cxx11::basic_string<_CharT, _Traits, _Allocator>&)’
+ 6340 |     operator<(const basic_string<_CharT, _Traits, _Alloc>& __lhs,
+      |     ^~~~~~~~
+/usr/include/c++/11/bits/basic_string.h:6340:5: note:   template argument deduction/substitution failed:
+In file included from main.cpp:2:
+Paar.h:16:45: note:   ‘Paar<std::__cxx11::basic_string<char>, int>’ is not derived from ‘const std::__cxx11::basic_string<_CharT, _Traits, _Allocator>’
+   16 |     bool operator<(Paar &a) const { return a<*this; }
+      |                                            ~^~~~~~
+In file included from /usr/include/c++/11/string:55,
+                 from main.cpp:4:
+/usr/include/c++/11/bits/basic_string.h:6353:5: note: candidate: ‘template<class _CharT, class _Traits, class _Alloc> bool std::operator<(const std::__cxx11::basic_string<_CharT, _Traits, _Allocator>&, const _CharT*)’
+ 6353 |     operator<(const basic_string<_CharT, _Traits, _Alloc>& __lhs,
+      |     ^~~~~~~~
+/usr/include/c++/11/bits/basic_string.h:6353:5: note:   template argument deduction/substitution failed:
+In file included from main.cpp:2:
+Paar.h:16:45: note:   ‘Paar<std::__cxx11::basic_string<char>, int>’ is not derived from ‘const std::__cxx11::basic_string<_CharT, _Traits, _Allocator>’
+   16 |     bool operator<(Paar &a) const { return a<*this; }
+      |                                            ~^~~~~~
+In file included from /usr/include/c++/11/string:55,
+                 from main.cpp:4:
+/usr/include/c++/11/bits/basic_string.h:6365:5: note: candidate: ‘template<class _CharT, class _Traits, class _Alloc> bool std::operator<(const _CharT*, const std::__cxx11::basic_string<_CharT, _Traits, _Allocator>&)’
+ 6365 |     operator<(const _CharT* __lhs,
+      |     ^~~~~~~~
+/usr/include/c++/11/bits/basic_string.h:6365:5: note:   template argument deduction/substitution failed:
+In file included from main.cpp:2:
+Paar.h:16:45: note:   mismatched types ‘const _CharT*’ and ‘Paar<std::__cxx11::basic_string<char>, int>’
+   16 |     bool operator<(Paar &a) const { return a<*this; }
+      |                                            ~^~~~~~
+In file included from /usr/include/c++/11/bits/ios_base.h:46,
+                 from /usr/include/c++/11/ios:42,
+                 from /usr/include/c++/11/ostream:38,
+                 from /usr/include/c++/11/iostream:39,
+                 from main.cpp:5:
+/usr/include/c++/11/system_error:269:3: note: candidate: ‘bool std::operator<(const std::error_code&, const std::error_code&)’
+  269 |   operator<(const error_code& __lhs, const error_code& __rhs) noexcept
+      |   ^~~~~~~~
+/usr/include/c++/11/system_error:269:31: note:   no known conversion for argument 1 from ‘Paar<std::__cxx11::basic_string<char>, int>’ to ‘const std::error_code&’
+  269 |   operator<(const error_code& __lhs, const error_code& __rhs) noexcept
+      |             ~~~~~~~~~~~~~~~~~~^~~~~
+/usr/include/c++/11/system_error:398:3: note: candidate: ‘bool std::operator<(const std::error_condition&, const std::error_condition&)’
+  398 |   operator<(const error_condition& __lhs,
+      |   ^~~~~~~~
+/usr/include/c++/11/system_error:398:36: note:   no known conversion for argument 1 from ‘Paar<std::__cxx11::basic_string<char>, int>’ to ‘const std::error_condition&’
+  398 |   operator<(const error_condition& __lhs,
+      |             ~~~~~~~~~~~~~~~~~~~~~~~^~~~~

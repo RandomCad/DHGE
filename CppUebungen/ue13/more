@@ -1,0 +1,38 @@
+main.cpp: In function ‘int main(int, const char**)’:
+main.cpp:14:13: error: template constraint failure for ‘template<class N, long unsigned int StartLen>  requires  NumberConc<N> class Num’
+   14 |   Num<char *> c;
+      |             ^
+main.cpp:14:13: note: constraints not satisfied
+In file included from main.cpp:1:
+Num.h: In substitution of ‘template<class N, long unsigned int StartLen>  requires  NumberConc<N> class Num [with N = char*; long unsigned int StartLen = 16]’:
+main.cpp:14:13:   required from here
+Num.h:14:9:   required for the satisfaction of ‘NumberConc<N>’ [with N = char*]
+Num.h:14:22:   in requirements with ‘N a’, ‘N b’ [with N = char*]
+Num.h:15:5: note: the required expression ‘(a + b)’ is invalid
+   15 |   a + b;
+      |   ~~^~~
+Num.h:17:5: note: the required expression ‘(a * b)’ is invalid
+   17 |   a * b;
+      |   ~~^~~
+Num.h:18:5: note: the required expression ‘(a * a)’ is invalid
+   18 |   a * a;
+      |   ~~^~~
+Num.h:19:5: note: the required expression ‘(a / b)’ is invalid
+   19 |   a / b;
+      |   ~~^~~
+cc1plus: note: set ‘-fconcepts-diagnostics-depth=’ to at least 2 for more detail
+main.cpp:14:15: warning: unused variable ‘c’ [-Wunused-variable]
+   14 |   Num<char *> c;
+      |               ^
+main.cpp:4:14: warning: unused parameter ‘argc’ [-Wunused-parameter]
+    4 | int main(int argc, const char *argv[]){
+      |          ~~~~^~~~
+main.cpp:4:32: warning: unused parameter ‘argv’ [-Wunused-parameter]
+    4 | int main(int argc, const char *argv[]){
+      |                    ~~~~~~~~~~~~^~~~~~
+In file included from main.cpp:1:
+Num.h: In instantiation of ‘Num<N, StartLen>& Num<N, StartLen>::operator+=(const Num<N, StartLen>&) [with N = double; long unsigned int StartLen = 16]’:
+main.cpp:12:8:   required from here
+Num.h:90:34: warning: comparison of integer expressions of different signedness: ‘long int’ and ‘long unsigned int’ [-Wsign-compare]
+   90 |       if(this->Arr - this->ArrSt < a.Len -(a.Arr - a.ArrSt)){
+      |          ~~~~~~~~~~~~~~~~~~~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~
