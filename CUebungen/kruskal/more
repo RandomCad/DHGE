@@ -1,0 +1,29 @@
+./kruskal.c: In function ‘main’:
+./kruskal.c:14:14: warning: unused parameter ‘argc’ [-Wunused-parameter]
+   14 | int main(int argc, const char *argv[]){
+      |          ~~~~^~~~
+/usr/bin/ld: /tmp/cciKNiNz.o: in function `sdlInit':
+/home/mathieu/CUebungen/kruskal/./sdlinterf.c:36: multiple definition of `sdlInit'; /tmp/ccQjpyjq.o:/home/mathieu/CUebungen/kruskal/./sdlinterf.c:36: first defined here
+/usr/bin/ld: /tmp/cciKNiNz.o: in function `sdlSetBlack':
+/home/mathieu/CUebungen/kruskal/./sdlinterf.c:137: multiple definition of `sdlSetBlack'; /tmp/ccQjpyjq.o:/home/mathieu/CUebungen/kruskal/./sdlinterf.c:137: first defined here
+/usr/bin/ld: /tmp/cciKNiNz.o: in function `sdlExit':
+/home/mathieu/CUebungen/kruskal/./sdlinterf.c:121: multiple definition of `sdlExit'; /tmp/ccQjpyjq.o:/home/mathieu/CUebungen/kruskal/./sdlinterf.c:121: first defined here
+/usr/bin/ld: /tmp/cciKNiNz.o: in function `sdlDrawPoint':
+/home/mathieu/CUebungen/kruskal/./sdlinterf.c:152: multiple definition of `sdlDrawPoint'; /tmp/ccQjpyjq.o:/home/mathieu/CUebungen/kruskal/./sdlinterf.c:152: first defined here
+/usr/bin/ld: /tmp/cciKNiNz.o: in function `sdlDrawCyclicPoint':
+/home/mathieu/CUebungen/kruskal/./sdlinterf.c:169: multiple definition of `sdlDrawCyclicPoint'; /tmp/ccQjpyjq.o:/home/mathieu/CUebungen/kruskal/./sdlinterf.c:169: first defined here
+/usr/bin/ld: /tmp/cciKNiNz.o: in function `sdlDrawRect':
+/home/mathieu/CUebungen/kruskal/./sdlinterf.c:180: multiple definition of `sdlDrawRect'; /tmp/ccQjpyjq.o:/home/mathieu/CUebungen/kruskal/./sdlinterf.c:180: first defined here
+/usr/bin/ld: /tmp/cciKNiNz.o: in function `sdlDrawRectFromTo':
+/home/mathieu/CUebungen/kruskal/./sdlinterf.c:217: multiple definition of `sdlDrawRectFromTo'; /tmp/ccQjpyjq.o:/home/mathieu/CUebungen/kruskal/./sdlinterf.c:217: first defined here
+/usr/bin/ld: /tmp/cciKNiNz.o: in function `sdlDrawLine':
+/home/mathieu/CUebungen/kruskal/./sdlinterf.c:251: multiple definition of `sdlDrawLine'; /tmp/ccQjpyjq.o:/home/mathieu/CUebungen/kruskal/./sdlinterf.c:251: first defined here
+/usr/bin/ld: /tmp/cciKNiNz.o: in function `sdlDrawCirc':
+/home/mathieu/CUebungen/kruskal/./sdlinterf.c:334: multiple definition of `sdlDrawCirc'; /tmp/ccQjpyjq.o:/home/mathieu/CUebungen/kruskal/./sdlinterf.c:334: first defined here
+/usr/bin/ld: /tmp/cciKNiNz.o: in function `sdlDrawCircPart':
+/home/mathieu/CUebungen/kruskal/./sdlinterf.c:341: multiple definition of `sdlDrawCircPart'; /tmp/ccQjpyjq.o:/home/mathieu/CUebungen/kruskal/./sdlinterf.c:341: first defined here
+/usr/bin/ld: /tmp/cciKNiNz.o: in function `sdlUpdate':
+/home/mathieu/CUebungen/kruskal/./sdlinterf.c:439: multiple definition of `sdlUpdate'; /tmp/ccQjpyjq.o:/home/mathieu/CUebungen/kruskal/./sdlinterf.c:439: first defined here
+/usr/bin/ld: /tmp/cciKNiNz.o: in function `sdlMilliSleep':
+/home/mathieu/CUebungen/kruskal/./sdlinterf.c:484: multiple definition of `sdlMilliSleep'; /tmp/ccQjpyjq.o:/home/mathieu/CUebungen/kruskal/./sdlinterf.c:484: first defined here
+collect2: error: ld returned 1 exit status

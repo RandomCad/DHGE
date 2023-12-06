@@ -1,0 +1,18 @@
+./ChessAiMain.c: In function ‘main’:
+./ChessAiMain.c:17:78: error: ‘MOUVES_PER_ROUND’ undeclared (first use in this function)
+   17 |   *Board=(ChessBoard) {0,malloc(sizeof(uchar)*64),malloc(sizeof(ChessBoard*)*MOUVES_PER_ROUND)};
+      |                                                                              ^~~~~~~~~~~~~~~~
+./ChessAiMain.c:17:78: note: each undeclared identifier is reported only once for each function it appears in
+./ChessAiMain.c:17:3: warning: missing initializer for field ‘child’ of ‘ChessBoard’ [-Wmissing-field-initializers]
+   17 |   *Board=(ChessBoard) {0,malloc(sizeof(uchar)*64),malloc(sizeof(ChessBoard*)*MOUVES_PER_ROUND)};
+      |   ^
+In file included from ./ChessAiMain.c:4:
+./ChessAiMethodes.h:7:23: note: ‘child’ declared here
+    7 |   struct ChessBoard **child;//The children of tis board;
+      |                       ^~~~~
+./ChessAiMain.c:12:14: warning: unused parameter ‘argc’ [-Wunused-parameter]
+   12 | int main(int argc, const char *argv[]){
+      |          ~~~~^~~~
+./ChessAiMain.c:12:32: warning: unused parameter ‘argv’ [-Wunused-parameter]
+   12 | int main(int argc, const char *argv[]){
+      |                    ~~~~~~~~~~~~^~~~~~

@@ -1,0 +1,50 @@
+#include <stdlib.h>
+#include <stdio.h>
+#include <errno.h>
+#include <string.h>
+#include <ctype.h>
+#define debug 1
+#if debug void FileError(char *codePlace){
+printf("error, %s", codePlace);
+exit(1);
+}
+#else void FileError(){
+printf("error");
+exit(1);
+}
+#endif
+int main(int argc, const char *argv[]){
+if(argc!=3){
+#if debug
+FileError("not inaf arg");
+#else
+#endif
+}
+FILE *readFile = fopen(argv[1],"r");
+if(!readFile){
+#if debug
+FileError("openread File");
+#else
+#endif
+}
+FILE *writFile = fopen(argv[2],"w");
+if(!readFile){
+#if debug
+FileError("open writeFile");
+#else
+#endif
+}
+int lastWasWhite=0;
+while(1){
+int charectar=getc(readFile);
+if(charectar==EOF){
+#if debug
+FileError("ende of redFile");
+#else
+#endif
+}
+if(!(lastWasWhite && isspace(charectar))&&putc(charectar,writFile) == EOF){
+}
+lastWasWhite=isspace(charectar);
+}
+}
