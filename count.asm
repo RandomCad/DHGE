@@ -1,26 +1,26 @@
 .include "m328pdef.inc"
-    .def	mask 	= r16	; mask register
-    .def	ledR 	= r17	; led register
-    .def	oLoopR 	= r18	; outer loop register
-    .def	iLoopRl = r24	; inner loop register low
-    .def	iLoopRh = r25	; inner loop register high
-    .equ	oVal 	= 80	; outer loop value
-    .equ	iVal 	= 2000 ; inner loop value
-    .cseg
-    .org	0x00
-    clr	    ledR		; clear led register to zero
-    ldi	    mask,0xFF		; load the mask register 11111111
-    out	    DDRB,mask		; set PORTB to all 8 bits OUT
+    .def    ledr = r16  ; define LED
+    .def    loop1 = r24 
+    .def    loopH = r25 ; define both parts of a 16 bit number
+    SBI     DDRD, 7     ; set 7 bit -> pin 7 from port D set as output
+    CBI     DDRB, 4     ; Clear the 4 bit -> pin 12 is input
+    ldi     ledr, 0x80   ; Set LED to on
 start:
-    out	    PORTB,ledR		; write led register to PORTB
-    inc     ledR		; increment ledR from 0 to 255
-    ldi     oLoopR,oVal		; initialize outer loop count
-oLoop:
-     ldi    iLoopRl,LOW(iVal)	; intialize inner loop count in inner
-     ldi    iLoopRh,HIGH(iVal)	; loop high and low registers
-iLoop:
-    sbiw    iLoopRl,1	        ; decrement inner loop register
-    brne    iLoop		; branch to iLoop if iLoop register != 0
-    dec	    oLoopR		; decrement outer loop register
-    brne    oLoop		; branch to oLoop if outer loop register != 0
+    SBIC    PINB, 4     ; Scip next instrucktion if bit in PINB not set   
+    rjmp    but
+
+    ldi     loop1, LOW(0xffff)
+    ldi     loopH, HIGH(0xffff) ; set the counter
+loop:
+    sbiw    loop1,0x01
+    brne    loop
+
+    SBIC    PORTD, 7     ; Scip next if bit in PIND not set
+    rjmp    but
+
+    SBI     PORTD, 7
     rjmp    start		; jump back to start
+
+but:
+    CBI     PORTD, 7    ; set 7 bit -> LED is set on
+    rjmp    start
