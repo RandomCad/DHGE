@@ -18,3 +18,6 @@ Zum Kompilieren verwenden sie avra. Folgendes kann beispielsweise verwendet werd
 `avra count.asm`  
 Zum Übertragen verwenden sie die ... Verbindung. Sofern sie diese verwenden können, können sie den folgenden Befehl zum Übertragen des compilierten Programms verwenden.    
 `avrdude -p atmega328p -c avrispmkii -P usb -U flash:w:count.hex:i`  
+
+## Sprache
+Dieses Repository wird nicht eindeutig in einer Sprache geführt werden. Die Hauptsprache sollte weiterhin Englisch sein. Eine verwendung von Deutsch wie beispielsweise in diesem Dokument ist aber erwartet.
