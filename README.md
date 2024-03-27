@@ -16,7 +16,7 @@ Installation durch die Befehle:
 
 Zum Kompilieren verwenden sie avra. Folgendes kann beispielsweise verwendet werden:  
 `avra count.asm`  
-Zum Übertragen verwenden sie die ... Verbindung. Sofern sie diese verwenden können, können sie den folgenden Befehl zum Übertragen des compilierten Programms verwenden.    
+Zum Übertragen verwenden sie die HaJo Verbindung in der UNI. Sofern sie diese verwenden können, können sie den folgenden Befehl zum Übertragen des compilierten Programms verwenden.    
 `avrdude -p atmega328p -c avrispmkii -P usb -U flash:w:count.hex:i`  
 
 ## Sprache
