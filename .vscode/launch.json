@@ -1,0 +1,10 @@
+{
+    "configurations": [
+        {
+            "type": "node-terminal",
+            "name": "AVR: Launch",
+            "request": "launch",
+            "command": "cd $(dirname -- ${file}) && filename=$(basename -- ${file}) && filename=\"${filename%.*}\" && avra ${file} && avrdude -p atmega328p -c avrispmkii -P usb -U flash:w:${filename}.hex:i"
+        }
+    ]
+}
