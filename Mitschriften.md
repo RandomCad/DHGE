@@ -31,15 +31,67 @@ void loop()
   digitalWrite(A0, LOW);
   delay(1000); // Wait for 1000 millisecond(s)
 }
+```  
+Wiederholung Stromteiler <https://de.wikipedia.org/wiki/Spannungsteiler>.  
+
+Unterscheidung von Pullup- und Pulldown-Wiederstand. End frage ist auf welcherr Seite der Wiederstand liegt. Zum GRN oder zur Spannung?   
+* Pullupwiederstand:    Wiederstand liegt auf seiten der hohen Spannung (xV).
+* Pulldownwiederstand:  Wiederstand liegt auf seiten der niederen spannung (GRND).
+
+Die verwendung dafon ist, dass durch diese ein Definition fom Zustand statfindet -> Unabhängig von Down oder Up. 
+Pull-up und down führen zu unterschiedlichen verhalten gegenüber störungen.
+<img src="./Immages/PullImage.png"/> 
+
+#### Fiele LED's  
+Das nachfolgende Bild Zeigt den Aufbau zur verwendung fieler LED's.
+<img src="./Immages/MultipleLED.png"/> 
+Der nachfolgenden Code führt zu einem Periodischen Blinken:
+```
+// C++ code
+//
+void setup()
+{
+  pinMode(PIN0, OUTPUT);
+  pinMode(PIN1, OUTPUT);
+  pinMode(PIN2, OUTPUT);
+  pinMode(PIN3, OUTPUT);
+  pinMode(PIN4, OUTPUT);
+  pinMode(PIN5, OUTPUT);
+  pinMode(PIN6, OUTPUT);
+  pinMode(PIN7, OUTPUT);
+}
+
+void loop()
+{  
+  //Second LED
+  digitalWrite(PIN0, HIGH);
+  digitalWrite(PIN1, HIGH);
+  digitalWrite(PIN2, HIGH);
+  digitalWrite(PIN3, HIGH);
+  digitalWrite(PIN4, HIGH);
+  digitalWrite(PIN5, HIGH);
+  digitalWrite(PIN6, HIGH);
+  digitalWrite(PIN7, HIGH);
+  delay(1000); // Wait for 1000 millisecond(s)
+  digitalWrite(PIN0, LOW);
+  digitalWrite(PIN1, LOW);
+  digitalWrite(PIN2, LOW);
+  digitalWrite(PIN3, LOW);
+  digitalWrite(PIN4, LOW);
+  digitalWrite(PIN5, LOW);
+  digitalWrite(PIN6, LOW);
+  digitalWrite(PIN7, LOW);
+  delay(1000); // Wait for 1000 millisecond(s)
+}
 ```
 
-###Basis Arduino Programmierung
+### Basis Arduino Programmierung
 Es gibt die `setup` und `loop` methoden in der IDE. `Setup` wird ausgeführt, wenn der Arduino hochfährt. Danach wird in einem `while(true)` loop die `loop` funktion ausgeführt.
 ### Prüfung
 Klausurleistung inerhalb der Vorlesung.  
 Ein Programm soll geschreiben werden. Mit zugehöriger doku. Zusätzlich müssen diese erklärt werden und fragen zum Code erklärt werden.  
 
 
-#Ideen
+# Ideen
 ## Kipfenster Roboter
 
