@@ -84,6 +84,19 @@ void loop()
   delay(1000); // Wait for 1000 millisecond(s)
 }
 ```
+### Wiederholung zum 10.04.2024
+Verwendung von Firuteller software zur Simulation eines Arduino. Dabei wurden LED's zum Blinken gebracht.
+### 16.04.2024
+EVA:
+* Eingabe
+* Verarbeitung
+* Ausgabe  
+
+Es gibt die Prot regiester. Diese entsprechen den Pins am IC. 
+Neben diesen Ports gibt es noch die DDR-Regiester deise dienen zur einstellung der Port Pins. 
+Das DDRD register gibt an, welche Pins des ProtD wie verwendet werden(In-/Out-Put).
+Neben den DDR und Port gibt es auch noch das PIN-Register. Dieses diehnt dazu Daten von den Pins zu Lesen. 
+
 
 ### Basis Arduino Programmierung
 Es gibt die `setup` und `loop` methoden in der IDE. `Setup` wird ausgeführt, wenn der Arduino hochfährt. Danach wird in einem `while(true)` loop die `loop` funktion ausgeführt.
