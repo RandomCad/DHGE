@@ -95,7 +95,25 @@ EVA:
 Es gibt die Prot regiester. Diese entsprechen den Pins am IC. 
 Neben diesen Ports gibt es noch die DDR-Regiester deise dienen zur einstellung der Port Pins. 
 Das DDRD register gibt an, welche Pins des ProtD wie verwendet werden(In-/Out-Put).
-Neben den DDR und Port gibt es auch noch das PIN-Register. Dieses diehnt dazu Daten von den Pins zu Lesen. 
+Neben den DDR und Port gibt es auch noch das PIN-Register. Dieses diehnt dazu Daten von den Pins zu Lesen.  
+
+Kompakter Polizei Blinker:
+```
+// C++ code
+//
+void setup()
+{
+  DDRD = 0xff;
+}
+
+void loop()
+{  
+  PORTD = 0x0f;
+  delay(200); // Wait for 1000 millisecond(s)
+  PORTD = 0xf0;
+  delay(200); // Wait for 1000 millisecond(s)
+}
+```
 
 
 ### Basis Arduino Programmierung
