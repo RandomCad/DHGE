@@ -115,6 +115,27 @@ void loop()
 }
 ```
 
+Der befehl `analogRead(pin)` ermöglicht das ermitteln eines Analogen wertes von einem Pin. Das Ergebniss ist ein integer zwischen 0 und 1023 (10-Bit). 
+Der Code zum Auslesen ist der folgende:
+```
+// C++ code
+//
+void setup()
+{
+  DDRD = 0xff;
+  PORTD = 1;
+  
+  pinMode(A1,INPUT);
+}
+
+void loop()
+{  
+  int x = analogRead(A1);
+  PORTD = (byte) (x >> 2);
+}
+```
+
+
 
 ### Basis Arduino Programmierung
 Es gibt die `setup` und `loop` methoden in der IDE. `Setup` wird ausgeführt, wenn der Arduino hochfährt. Danach wird in einem `while(true)` loop die `loop` funktion ausgeführt.
