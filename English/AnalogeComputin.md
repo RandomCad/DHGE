@@ -1,4 +1,4 @@
-# Analoge Computing 
+# Analogue Computing 
 In total a presentation of 10-15 min should be created.
 ## TODO:
 1. Find structure   -> General structure found
@@ -40,9 +40,26 @@ There uses were:
     * Anti-aircraft guns
 * Bomb dropping controllers
 * Torpedo launch computers
+* Rocket control (A4)
 * ...
 
 Besides these analogue `computers` were and are used to test and model special circumstances like buildings or the flow of water in man made channels.  
+## General purpose analogue computers
+While *Helmut Hoelzer* worked on the A4-guidance-computer he also developed the first general purpose analogue computer. 
+It was used for simulations of the flight of the A4 and was the base for all the later analogue computers. 
+
+### Components of Analogue computers
+The main components analogue computers are:
+...  
+
+Most of the time thy are made of electrical systems.  
+### The end of analogue computers
+* Where used till the 80s
+* Where than replaced by Digital computers
+* are reappearing to day in some fields.
+
+## Comparison 
+
 
 
 ## Sources
