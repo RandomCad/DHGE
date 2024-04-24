@@ -67,6 +67,10 @@ The main components analogue computers are:
 |Accuracy               |Up to 10^-3 AE                                                             |In theory, the accuracy can be adjusted to suit the application.   |
 
 ## Modern use cases
+* AI: [In Memory calculation withe analogue parts](https://www.wired.com/story/unbelievable-zombie-comeback-analog-computing/)
+* Quantum computing: Is a form of analogue computing(**?**)
+
+
 
 ## Sources
 Analogrechner von Bernd Ulmann
