@@ -52,15 +52,21 @@ It was used for simulations of the flight of the A4 and was the base for all the
 The main components analogue computers are:
 ...  
 
-Most of the time thy are made of electrical systems.  
 ### The end of analogue computers
 * Where used till the 80s
 * Where than replaced by Digital computers
 * are reappearing to day in some fields.
 
 ## Comparison 
+|                       |Analogue                                                                   |Digital                                                            |
+|:---------------------:|:-------------------------------------------------------------------------:|:-----------------------------------------------------------------:|
+|Energy consumptions    |Low                                                                        |High                                                               |
+|Calculation precision  |Low                                                                        |High                                                               |
+|Calculation speed      |Can calculate complex task fast if a direct physical analogue can be used  |Slower in the simulation of complex physical systems               |
+|Programmability        |More complex involves the rewiring of the computer                         |Simple                                                             |
+|Accuracy               |Up to 10^-3 AE                                                             |In theory, the accuracy can be adjusted to suit the application.   |
 
-
+## Modern use cases
 
 ## Sources
 Analogrechner von Bernd Ulmann
