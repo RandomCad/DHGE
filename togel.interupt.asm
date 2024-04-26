@@ -7,7 +7,11 @@
     CBI   DDRD, 1     ; Clear the 4 bit -> pin 12 is input
     SBI   PORTD, 1    ; PORTD 1 is input. set the Pulup
 
-
+; Stack pointer inizialisierung
+  LDI work, HIGH(RAMEND);
+  OUT SPH, work
+  LDI work, HIGH(RAMEND);
+  OUT SPL, work
 
 ; interupt config
   sbi EIMSK, 0 ;enables the interupt 0
