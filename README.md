@@ -16,5 +16,11 @@ Installation durch die Befehle:
 
 Zum Kompilieren verwenden sie avra. Folgendes kann beispielsweise verwendet werden:  
 `avra count.asm`  
-Zum Übertragen verwenden sie die ... Verbindung. Sofern sie diese verwenden können, können sie den folgenden Befehl zum Übertragen des compilierten Programms verwenden.    
+Zum Übertragen verwenden sie die HaJo Verbindung in der UNI. Sofern sie diese verwenden können, können sie den folgenden Befehl zum Übertragen des compilierten Programms verwenden.    
 `avrdude -p atmega328p -c avrispmkii -P usb -U flash:w:count.hex:i`  
+
+### VS-Code
+Befindet sich die unter .vscode/launch.json angegebene Launch-Konfiguration im .vscode-Ordner des aktuellen Workspaces, kann bei geöffneter .asm-Datei F5 gedrückt werden, um diese automatisch zu kompilieren und auf den Microcontroller zu flashen.
+
+## Sprache
+Dieses Repository wird nicht eindeutig in einer Sprache geführt werden. Die Hauptsprache sollte weiterhin Englisch sein. Eine verwendung von Deutsch wie beispielsweise in diesem Dokument ist aber erwartet.
