@@ -8,6 +8,7 @@
     SBI   PORTD, 1    ; PORTD 1 is input. set the Pulup
 
 ; Stack pointer inizialisierung
+; is done automatickaly to day
   LDI work, HIGH(RAMEND);
   OUT SPH, work
   LDI work, HIGH(RAMEND);
