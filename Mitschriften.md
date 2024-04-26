@@ -144,7 +144,40 @@ Wandelt eine Zahl in einem Wertebereich in einen anderen Wertebereich um.
 * **toLow**: Die untere Grenze des Zielwertebereiches
 * **toHigh**: Die obere Grenze des Zielwertebereiches
 
+### Vorlesung 26.04.2024
+#### Timer
+Zähl register wird dauerhaft hochgezählt.  
+Es kann eine Zahl festegelet werden, bei welcher die Grenze/die Ziel zeit gefunden wurde.  
+Die Doku ist zu beachten, wie Timer einzustellen sind. FOlgender code bringt eine LED zum blinken mit 1Hz:
+```
+void setup() {
+    DDRD = 0xFF;
+	PORTD = 0x00;
+  
+  	// Counter register
+  	TCNT1 = 0;
+  
+  	// Output Compare register
+    OCR1A = 15624;
 
+  	// Timer Config
+    TCCR1A = 0;
+    TCCR1B = (1 << CS12) | (1 << CS10) | (1 << WGM12); // 1024-Prescaler, Clear on compare match
+    TCCR1C = 0;
+
+  	// Interrupt mask
+    TIMSK1 = 1 << OCIE1A; // Interrupt on Compare A match
+}
+
+void loop() {
+}
+
+ISR(TIMER1_COMPA_vect) {
+  	PORTD ^= 0x80;
+}
+```
+#### HA
+Ablaufdiagram für ein Garagentor öffner(Automatisch) mit schaltern (2). 
 
 
 
