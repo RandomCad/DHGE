@@ -5,9 +5,19 @@
     .def  tast = r18;
     SBI   DDRD, 7     ; set 7 bit -> pin 7 from port D set as output
     CBI   DDRD, 1     ; Clear the 4 bit -> pin 12 is input
-    SBI   PORTD, 1     ; Clear the 4 bit -> pin 12 is input
-    ldi   work, 0x80   ; Set LED to on
-    ldi togleMask, 0x80
+    SBI   PORTD, 1    ; PORTD 1 is input. set the Pulup
+
+
+
+; interupt config
+  sbi EIMSK, 0 ;enables the interupt 0
+; EICRA ist neu hinzugekommen und liegt nicht im addressbereich der alten asm befehl. Deswegen muss hier ein Workaround verwendet werden.
+  ldi work, 1 << ISC01 ; setze, dass auf die Fallende Flanke beachtet werden soll
+  STS EICRA, work
+
+  ldi   work, 0x80   ; Set LED to on
+  ldi togleMask, 0x80
+
 start:
   SBIS PIND, 1
     RCALL togglePin ;
@@ -20,7 +30,7 @@ togglePin:
   entprellen:
     SBIW R24, 1
     BRNE entprellen
-  SBIC PINB, 4;
+  SBIC PINB, 1;
     ret;
   IN work, PORTD
   EOR work, togleMask;
