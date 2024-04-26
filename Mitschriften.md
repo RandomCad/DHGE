@@ -134,6 +134,18 @@ void loop()
   PORTD = (byte) (x >> 2);
 }
 ```
+### HA vom 16.04.2024
+Map:
+Wandelt eine Zahl in einem Wertebereich in einen anderen Wertebereich um.  
+`map(value, fromLow, fromHigh, toLow, toHigh)`
+* **value**: Der umzuwnadlende Werte
+* **fromLow**: Die untere Grenze des Wertebereiches von value
+* **fromHigh**: Die obere Grenze des Wertebereiches von value
+* **toLow**: Die untere Grenze des Zielwertebereiches
+* **toHigh**: Die obere Grenze des Zielwertebereiches
+
+
+
 
 
 
