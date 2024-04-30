@@ -3,7 +3,8 @@ Dieses Repository enthält den Code für die gleichnamige Vorlesung an der DHGE 
 
 ## Kompatibilität
 Eine Kompatibilität zum Code in der Vorlesung kann nicht garantiert werden, da unterschiedliche Assembler verwendet werden. 
-Im Projekt wird die Verwendung des `avra` Assemblers vorgeschlagen. Der Dozent scheint den `as` zu verwenden. Dies ist der GNU Assembler.
+Im Projekt wird die Verwendung des `avra` Assemblers vorgeschlagen. Der Dozent scheint den `as` zu verwenden. Dies ist der GNU Assembler.  
+Incompatibel sind dabei insbesondere Kommentare. Der `as` scheint auch `//` commentare correct zu verarbeiten. `avra` Versteht diese nicht correct.
 
 ## Kompilieren des Codes
 
