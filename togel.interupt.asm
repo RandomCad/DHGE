@@ -1,46 +1,67 @@
 .include "m328pdef.inc"
+;
+; Toggle Pin mit Interrupt
+;
+; Created: 26.04.2024 14:41:09
+; Author : A.Grimm
+;
 
-    .def  work = r16  ; define LED
-    .def  togleMask = r17  ; Wenn 1 wurde der Taster im Letzten zykluss betätigt. Wenn 0 wurde er nicht betätigt.
-    .def  tast = r18;
-    SBI   DDRD, 7     ; set 7 bit -> pin 7 from port D set as output
-    CBI   DDRD, 1     ; Clear the 4 bit -> pin 12 is input
-    SBI   PORTD, 1    ; PORTD 1 is input. set the Pulup
+; MC mit 16MHz -> 4ms entprellen
+; Taster an PD2 -> lowaktiv
+; LED PD7 -> highaktiv
 
-; Stack pointer inizialisierung
-; is done automatickaly to day
-  LDI work, HIGH(RAMEND);
-  OUT SPH, work
-  LDI work, HIGH(RAMEND);
-  OUT SPL, work
+.def work = R16
+.def toggleMask = R17
 
-; interupt config
-  sbi EIMSK, 0 ;enables the interupt 0
-; EICRA ist neu hinzugekommen und liegt nicht im addressbereich der alten asm befehl. Deswegen muss hier ein Workaround verwendet werden.
-  ldi work, 1 << ISC01 ; setze, dass auf die Fallende Flanke beachtet werden soll
-  STS EICRA, work
+.equ LED = 7
+.equ Taster = 2
+.equ entprellCount = 16000
 
-  ldi   work, 0x80   ; Set LED to on
-  ldi togleMask, 0x80
+;Interruptverktortabelle
+.org 0x0000			//Reset
+rjmp start
+nop
+rjmp togglePin      // wird interrupted
 
 start:
-  SBIS PIND, 1
-    RCALL togglePin ;
-  rjmp start
+;Initialisierung
+sbi DDRD, LED		//Pin als Ausgang festsetzen
+LDI toggleMask, 1<<LED
+;cbi DDRB, Taster
+sbi PORTD, Taster	//internen Pull-Up-Widerstand aktivieren
+
+;StackPointer initialisiern
+LDI work, HIGH(RAMEND)
+OUT SPH, work
+LDI work, LOW(RAMEND)
+OUT SPL, work
+
+;Interrupt-konfiguragtion
+sbi EIMSK, INT0
+LDI work, 1<<ISC01
+STS EICRA, work
+
+SEI 
+main:
+	
+    rjmp main
 
 togglePin:
-; entprellen
-  LDI R25, HIGH(16000)
-  LDI R24, LOW(16000)
-  entprellen:
-    SBIW R24, 1
-    BRNE entprellen
-  SBIC PINB, 1;
-    ret;
-  IN work, PORTD
-  EOR work, togleMask;
-  out PORTD, work
-stuck:
-  SBIS PIND, 1;
-    rjmp stuck;
-  ret
+  IN R15, SREG
+  RCALL entprellen
+  SBIC PINB, Taster
+	RET
+  IN  work, PORTD
+  EOR work, toggleMask
+  OUT PORTD, work
+  OUT SREG, R15
+  RETI
+
+entprellen:
+	LDI R25, HIGH(entprellCount)
+	LDI R24, LOW(entprellCount)
+	sechZehnBitLoop:
+	  SBIW R24, 1
+	  BRNE sechZehnBitLoop
+RET
+
