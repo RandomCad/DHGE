@@ -18,17 +18,17 @@
 .equ entprellCount = 16000
 
 ;Interruptverktortabelle
-.org 0x0000			//Reset
+.org 0x0000			;Reset
 rjmp start
 nop
-rjmp togglePin      // wird interrupted
+rjmp togglePin      ;wird interrupted
 
 start:
 ;Initialisierung
-sbi DDRD, LED		//Pin als Ausgang festsetzen
+sbi DDRD, LED		;Pin als Ausgang festsetzen
 LDI toggleMask, 1<<LED
 ;cbi DDRB, Taster
-sbi PORTD, Taster	//internen Pull-Up-Widerstand aktivieren
+sbi PORTD, Taster	;internen Pull-Up-Widerstand aktivieren
 
 ;StackPointer initialisiern
 LDI work, HIGH(RAMEND)
