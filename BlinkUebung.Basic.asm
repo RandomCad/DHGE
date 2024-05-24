@@ -10,7 +10,7 @@
 ; 2_000_000 Tackte pro flip.
 ;16 bit = 65536
 SBI DDRD, LED
-LDI R17, 1 << LED
+LDI togleMask, 1 << LED
 
 
 start:
@@ -20,8 +20,6 @@ start:
   LDI work, LOW(684)
   MOV XL, work
   loop: ;does 255 * 6 + 4 Cycles
-    SBIW XH:XL,1 ; 2 Cycles
-    ; Z is set if the howl is 0x0000
     ; Elongat cycle
     ldi work, 244
     innerLoop: ; does 255 *6 - 1 Cycles 
@@ -30,6 +28,8 @@ start:
       nop
       SUBI work, 1 
       BRBC 1,innerLoop ; Branch if Zero Flag cleared ; 2 Cycles in the loop
+    SBIW XH:XL,1 ; 2 Cycles
+    ; Z is set if the howl is 0x0000
     BRBC 1,loop ; Branch if Zero Flag cleared ; 2 Cycles in the loop
   IN work, PORTD
   EOR work, togleMask
