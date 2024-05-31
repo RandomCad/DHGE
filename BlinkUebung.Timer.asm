@@ -43,6 +43,7 @@ setup:
   ;16 bit = 65536
   SBI DDRD, LED
   LDI togleMask, 1 << LED
+  sei;
 
 EOF:
   rjmp EOF ; Infinit loop at EOF 
