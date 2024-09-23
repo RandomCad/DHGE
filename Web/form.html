@@ -4,31 +4,66 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Registrierungsformular</title>
+  <style>
+    .lable-cell{
+      text-align: right;
+    }
+    td {
+      margin-left: 1em;
+    }
+
+    .required-star::after{
+      color: red;
+      content: " *";
+    }
+  </style>
 </head>
 <body>
   <header>
       <h1>Anmeldung</h1>
   </header>
   <main>
-    <form action="" method="get">
-      <label for="name">Name:</label>
-        <input type="text" id="name" name="name"  placeholder="Grimm"/>
-      </label>
-      <br/>
-      <label for="vorname">Vorname:</label>
-        <input type="text" id="vorname" name="vorname" placeholder="André"/>
-      </label>
-      <br/>
-      <label for="plz">Postleitzahl:</label>
-        <input type="text" id="plz" name="plz" placeholder="09009"/>
-      </label>
-      <br/>
-      <label for="ort">Ort:</label>
-        <input type="text" id="ort" name="ort" placeholder="Ort"/>
-      </label>
-      <br/>
-      <input type="submit" value="Absenden"/>
+    <form action="" method="post">
+      <table>
+        <tr>
+          <td class="lable-cell"> 
+            <label for="name" class="required-star">Name:</label>
+          </td>
+          <td>
+            <input type="text" id="name" name="name"  placeholder="Grimm" required/>
+          </td>
+        </tr>
+        <tr>
+          <td class="lable-cell">
+            <label for="vorname" class="required-star">Vorname:</label>
+          </td>
+          <td>
+            <input type="text" id="vorname" name="vorname" placeholder="André" required/>
+          </td>
+        </tr>
+        <tr>
+          <td class="lable-cell">
+            <label for="plz">Postleitzahl:</label>
+          </td>
+          <td>
+            <input type="text" id="plz" name="plz" placeholder="09009" minlength=5 maxlength=7/>
+          </td>
+        </tr>
+        <tr>
+          <td class="lable-cell">
+            <label for="ort">Ort:</label>
+          </td>
+          <td>
+            <input type="text" id="ort" name="ort" placeholder="Gera"/>
+          </td>
+        </tr>
+        <tr>
+          <td class="lable-cell" colspan=2>
+            <input type="submit" value="Absenden"/>
+          </td>
+        </tr>
       <!--alternativ: button Tag-->
+      </table>
     </form>
   </main>
 </body>
