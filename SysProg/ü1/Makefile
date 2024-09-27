@@ -1,7 +1,9 @@
-run:
+run: comp
 	./main
 
-comp:
+comp: main.c
+
+main.c: $(main)
 	clang ./main.c -o main
 
 clean:
