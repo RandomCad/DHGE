@@ -2,25 +2,34 @@ body {
   height: 100vh;
   margin: 0;
   display: grid;
-  grid-template-columns: [robert] 2fr [paul] 4fr [friedrich] 3fr [albert];
+  grid-template-areas:  "head head head head head head"
+                        "nav main main main aside aside"
+                        "foot foot foot foot foot foot";
+  gap: 1px;
 }
 
-#nr1{
-  grid-column-start: 1;
-  grid-column-end: 2;
-  border-color: green;
-}
-#nr2{
-  grid-column-start: paul;
-  grid-column-end: albert;
-  border-color: red;
-}
-#nr3{
-  grid-column-start: friedrich;
-  grid-column-end: albert;
-  border-color: yellow;
+header{
+  grid-area: head;
+  border: 1px solid;
 }
 
-div{
-  border: 1em solid;
+nav{
+  grid-area: nav;
+  border: 1px solid;
 }
+
+main{
+  grid-area: main;
+  border: 1px solid;
+}
+
+aside{
+  grid-area: aside;
+  border: 1px solid;
+}
+
+footer{
+  grid-area: foot;
+  border: 1px solid;
+}
+
