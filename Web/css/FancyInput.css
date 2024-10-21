@@ -23,3 +23,12 @@
   padding: 0.5em
 }
 
+h1 {
+  color: darkblue;
+  text-align: center;
+}
+
+#loginForm {
+  width: 60vw;
+  margin: 0 auto;
+}
