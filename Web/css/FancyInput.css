@@ -1,0 +1,25 @@
+.fancy-input{
+  margin: 1em 0;
+  position: relative
+}
+
+.fancy-input label.placeHolder{
+  color: #666;
+  font-size: 1em;
+  top: 0.5em;
+  left: 0.5em;
+
+}
+.fancy-input label{
+  position: absolute;
+  top: -0.6em;
+  left: 0.5em;
+  background: #fff;
+  font-size: 0.8em;
+  padding: 0 0.5em;
+  transition: all 0.5s;
+}
+.fancy-input input{
+  padding: 0.5em
+}
+
