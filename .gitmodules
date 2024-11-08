@@ -10,3 +10,6 @@
 [submodule "Krypto"]
 	path = Krypto
 	url = git@github.com:RandomCad/Krypto.git
+[submodule "DHGE-Intel"]
+	path = DHGE-Intel
+	url = git@github.com:RandomCad/DHGE-Intel.git
