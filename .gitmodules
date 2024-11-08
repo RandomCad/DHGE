@@ -13,3 +13,6 @@
 [submodule "DHGE-Intel"]
 	path = DHGE-Intel
 	url = git@github.com:RandomCad/DHGE-Intel.git
+[submodule "VPN"]
+	path = VPN
+	url = git@github.com:RandomCad/VPN.git
