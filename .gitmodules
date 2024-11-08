@@ -1,0 +1,9 @@
+[submodule "Webentwicklung"]
+	path = Webentwicklung
+	url = git@github.com:RandomCad/Webentwicklung.git
+[submodule "SystemProgrammierung"]
+	path = SystemProgrammierung
+	url = git@github.com:RandomCad/SystemProgrammierung.git
+[submodule "GitPresentation"]
+	path = GitPresentation
+	url = git@github.com:RandomCad/GitPresentation.git
