@@ -16,3 +16,6 @@
 [submodule "VPN"]
 	path = VPN
 	url = git@github.com:RandomCad/VPN.git
+[submodule "ATMega"]
+	path = ATMega
+	url = git@github.com:RandomCad/ATMega.git
