@@ -7,3 +7,6 @@
 [submodule "GitPresentation"]
 	path = GitPresentation
 	url = git@github.com:RandomCad/GitPresentation.git
+[submodule "Krypto"]
+	path = Krypto
+	url = git@github.com:RandomCad/Krypto.git
