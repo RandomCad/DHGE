@@ -19,3 +19,6 @@
 [submodule "ATMega"]
 	path = ATMega
 	url = git@github.com:RandomCad/ATMega.git
+[submodule "Embeded1"]
+	path = Embeded1
+	url = git@github.com:RandomCad/Embeded1.git
