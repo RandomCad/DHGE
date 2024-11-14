@@ -31,3 +31,6 @@
 [submodule "CppUebung"]
 	path = CppUebung
 	url = git@github.com:RandomCad/CppUebung.git
+[submodule "English"]
+	path = English
+	url = git@github.com:RandomCad/English.git
