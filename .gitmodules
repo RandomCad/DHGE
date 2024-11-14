@@ -25,3 +25,9 @@
 [submodule "SystemEntwicklung"]
 	path = SystemEntwicklung
 	url = git@github.com:RandomCad/SystemEntwicklung.git
+[submodule "CUebung"]
+	path = CUebung
+	url = git@github.com:RandomCad/CUebung.git
+[submodule "CppUebung"]
+	path = CppUebung
+	url = git@github.com:RandomCad/CppUebung.git
