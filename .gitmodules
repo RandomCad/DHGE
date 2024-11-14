@@ -22,3 +22,6 @@
 [submodule "Embeded1"]
 	path = Embeded1
 	url = git@github.com:RandomCad/Embeded1.git
+[submodule "SystemEntwicklung"]
+	path = SystemEntwicklung
+	url = git@github.com:RandomCad/SystemEntwicklung.git
