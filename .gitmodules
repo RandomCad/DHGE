@@ -34,3 +34,6 @@
 [submodule "English"]
 	path = English
 	url = git@github.com:RandomCad/English.git
+[submodule "SystemProgramierung"]
+	path = SystemProgramierung
+	url = git@github.com:RandomCad/SystemProgramierung.git
