@@ -37,3 +37,6 @@
 [submodule "SystemProgramierung"]
 	path = SystemProgramierung
 	url = git@github.com:RandomCad/SystemProgramierung.git
+[submodule "ML"]
+	path = ML
+	url = git@github.com:RandomCad/ML.git
